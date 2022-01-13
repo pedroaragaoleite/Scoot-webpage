@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+}
+
+body {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 0.9375rem;
+  line-height: 1.5625rem;
+  color: #495567;
+}
+
+.font-h1 {
+  font-size: 3.5rem;
+}
+
+.font-h2 {
+  font-size: 3rem;
+}
+
+.font-h3 {
+  font-size: 2.5rem;
+}
+
+.font-h4 {
+  font-size: 1.5rem;
+}
+
+.lh-0 {
+  line-height: 3.625rem;
+}
+
+.lh-1 {
+  line-height: 3rem;
+}
+
+.lh-2 {
+  line-height: 1.75rem;
+}
+
+.button {
+  background-color: #fcb72b;
+  color: #ffffff;
+  line-height: 1.5625rem;
+  padding: 0.875rem 3rem;
+}
+.button:hover {
+  background-color: #ffffff;
+  color: #fcb72b;
+  border: 2px solid #fcb72b;
+}
+
+body.noscroll {
+  overflow: hidden;
+}
+
+@media (max-width: ) {
+  .hide-for-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 48em) {
+  .hide-for-desktop {
+    display: none;
+  }
+}
+
+.container {
+  padding: 0 2rem;
+}
+@media (min-width: 90em) {
+  .container {
+    padding: 0 12.25rem;
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+a {
+  font-size: 0.9375rem;
+  line-height: 1.5625rem;
+  font-weight: bold;
+}
+
+.header {
+  height: 4rem;
+  display: flex;
+  align-items: center;
+}
+.header.open {
+  position: static;
+}
+@media (min-width: 48em) {
+  .header {
+    height: 6rem;
+  }
+}
+.header__overlay {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.75);
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 4rem;
+  transform: translateX(-100%);
+  transition: all 200ms ease-in-out;
+}
+.header__overlay.open {
+  transform: translateX(0);
+  transition: all 200ms ease-in-out;
+}
+.header__toggle {
+  cursor: pointer;
+  border: 1px solid black;
+}
+.header__toggle > span {
+  display: block;
+  width: 1.25rem;
+  height: 0.1875rem;
+  background-color: #fcb72b;
+  transform-origin: 1.5px 1.5px;
+  transition: all 200ms ease-in-out;
+}
+.header__toggle > span:not(:last-child) {
+  margin-bottom: 3px;
+}
+.header__toggle.open > span:first-child {
+  transform: rotate(45deg);
+}
+.header__toggle.open > span:nth-child(2) {
+  opacity: 0;
+}
+.header__toggle.open > span:last-child {
+  transform: rotate(-45deg);
+}
+@media (min-width: 48em) {
+  .header__toggle {
+    display: none;
+  }
+}
+.header__logo {
+  margin: 0 auto;
+}
+.header__nav {
+  position: fixed;
+  background-color: #333a44;
+  width: 16rem;
+  height: 100%;
+  left: 0;
+  top: 4rem;
+  justify-content: space-between;
+  flex-direction: column;
+  transform: translateX(-100%);
+  overflow-x: hidden;
+  transition: all 200ms ease-in-out;
+}
+.header__nav.open {
+  transform: translate(0);
+  transition: all 200ms ease-in-out;
+}
+@media (min-width: 48em) {
+  .header__nav {
+    background-color: transparent;
+    transform: translate(0);
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    top: 0;
+  }
+}
+.header__menu {
+  flex-direction: column;
+  padding-top: 4rem;
+  padding-left: 2rem;
+}
+@media (min-width: 48em) {
+  .header__menu {
+    flex-direction: row;
+    margin-left: 3.6875rem;
+    padding-top: 0;
+  }
+}
+.header__menu > li:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+@media (min-width: 48em) {
+  .header__menu > li:not(:last-child) {
+    margin-bottom: 0;
+  }
+  .header__menu > li:not(:last-child):not(:last-child) {
+    margin-right: 2rem;
+  }
+}
+.header__link {
+  line-height: 25px;
+  font-size: 1.25rem;
+  font-family: "Space Mono", monospace;
+  color: #939caa;
+  z-index: 10;
+}
+@media (min-width: 48em) {
+  .header__link {
+    font-size: 0.9375rem;
+  }
+}
+.header__btn {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: calc(4rem + 1.5rem);
+}
+@media (min-width: 48em) {
+  .header__btn {
+    display: block;
+    margin-right: inherit;
+    margin-bottom: 0;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

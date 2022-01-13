@@ -1,0 +1,8 @@
+@use "../abstracts/colors" as *;
+
+body {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 0.9375rem; //15px
+  line-height: 1.5625rem; // 25px
+  color: $darknavy;
+}

@@ -1,0 +1,36 @@
+@use "../abstracts/mixins" as m;
+
+body {
+  &.noscroll {
+    overflow: hidden;
+  }
+}
+
+.hide-for-mobile {
+  @include m.breakpoints-down(small) {
+    display: none;
+  }
+}
+
+.hide-for-desktop {
+  @include m.breakpoints-up(medium) {
+    display: none;
+  }
+}
+
+.container {
+  padding: 0 2rem; //32px
+  @include m.breakpoints-up(xlarge) {
+    padding: 0 12.25rem; //196px
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+a {
+  font-size: 0.9375rem; // 15px
+  line-height: 1.5625rem; //25px
+  font-weight: bold;
+}

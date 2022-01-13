@@ -1,0 +1,133 @@
+@use "../abstracts/colors" as *;
+@use "../abstracts/mixins" as m;
+
+.header {
+  height: 4rem; //64px
+  display: flex;
+  align-items: center;
+  &.open {
+    position: static;
+  }
+  @include m.breakpoints-up(medium) {
+    height: 6rem; //96px
+  }
+  &__overlay {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.75);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 4rem;
+    transform: translateX(-100%);
+    transition: all 200ms ease-in-out;
+    &.open {
+      transform: translateX(0);
+      transition: all 200ms ease-in-out;
+    }
+  }
+  &__toggle {
+    cursor: pointer;
+    border: 1px solid black;
+    > span {
+      // burguer lines
+      display: block;
+      width: 1.25rem; // 20px
+      height: 0.1875rem; // 3px
+      background-color: $yellow;
+      transform-origin: 1.5px 1.5px;
+      transition: all 200ms ease-in-out;
+      &:not(:last-child) {
+        margin-bottom: 3px;
+      }
+    }
+    &.open {
+      > span:first-child {
+        transform: rotate(45deg);
+      }
+      > span:nth-child(2) {
+        opacity: 0;
+      }
+      > span:last-child {
+        transform: rotate(-45deg);
+      }
+    }
+    @include m.breakpoints-up(medium) {
+      display: none;
+    }
+  }
+  &__logo {
+    margin: 0 auto;
+  }
+  &__nav {
+    position: fixed;
+    background-color: $gray;
+    width: 16rem; //256px
+    height: 100%;
+    left: 0;
+    top: 4rem;
+    justify-content: space-between;
+    flex-direction: column;
+    transform: translateX(-100%);
+    overflow-x: hidden;
+    transition: all 200ms ease-in-out;
+    &.open {
+      transform: translate(0);
+      transition: all 200ms ease-in-out;
+    }
+    @include m.breakpoints-up(medium) {
+      background-color: transparent;
+      transform: translate(0);
+      position: relative;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      top: 0;
+    }
+  }
+  &__menu {
+    flex-direction: column;
+    padding-top: 4rem;
+    padding-left: 2rem;
+    @include m.breakpoints-up(medium) {
+      flex-direction: row;
+      margin-left: 3.6875rem; // 59px
+      padding-top: 0;
+    }
+    > li {
+      &:not(:last-child) {
+        // margin between links
+        margin-bottom: 1.5rem;
+        @include m.breakpoints-up(medium) {
+          margin-bottom: 0;
+          &:not(:last-child) {
+            margin-right: 2rem; //32px
+          }
+        }
+      }
+    }
+  }
+  &__link {
+    line-height: 25px;
+    font-size: 1.25rem;
+    font-family: "Space Mono", monospace;
+    color: $dimgray;
+    z-index: 10;
+    @include m.breakpoints-up(medium) {
+      font-size: 0.9375rem; //15px
+    }
+  }
+  &__btn {
+    // margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: calc(4rem + 1.5rem);
+    @include m.breakpoints-up(medium) {
+      display: block;
+      margin-right: inherit;
+      margin-bottom: 0;
+    }
+    @include m.breakpoints-up(xlarge) {
+    }
+  }
+}

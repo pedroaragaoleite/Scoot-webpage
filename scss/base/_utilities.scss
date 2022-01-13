@@ -1,0 +1,36 @@
+@use "../abstracts/variables" as *;
+
+$utilities: (
+  "font-size": (
+    "prefix": "font",
+    "values": (
+      "h1": $font-size-h1,
+      "h2": $font-size-h2,
+      "h3": $font-size-h3,
+      "h4": $font-size-h4,
+    ),
+  ),
+  "line-height": (
+    "prefix": "lh",
+    "values": (
+      0: 3.625rem,
+      // 58px
+      1: 3rem,
+      //48px
+      2: 1.75rem,
+      //28px
+    ),
+  ),
+);
+
+// Generate utilities
+@each $property, $map in $utilities {
+  $prefix: map-get($map, "prefix");
+  $values: map-get($map, "values");
+
+  @each $k, $v in $values {
+    .#{$prefix}-#{$k} {
+      #{$property}: $v;
+    }
+  }
+}
