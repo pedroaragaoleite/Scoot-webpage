@@ -7,7 +7,7 @@ body {
 }
 
 .hide-for-mobile {
-  @include m.breakpoints-down(small) {
+  @include m.breakpoints-down(medium) {
     display: none;
   }
 }

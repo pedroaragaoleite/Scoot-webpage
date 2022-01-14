@@ -52,7 +52,15 @@ body {
 }
 
 .lh-2 {
+  line-height: 2.5rem;
+}
+
+.lh-3 {
   line-height: 1.75rem;
+}
+
+.lh-4 {
+  line-height: 1.5625rem;
 }
 
 .button {
@@ -71,7 +79,7 @@ body.noscroll {
   overflow: hidden;
 }
 
-@media (max-width: ) {
+@media (max-width: 47.9375) {
   .hide-for-mobile {
     display: none;
   }
@@ -102,36 +110,73 @@ a {
   font-weight: bold;
 }
 
-.header {
-  height: 4rem;
-  display: flex;
-  align-items: center;
+.showcase {
+  background: url(../assets/images/home-hero-mobile.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: calc(100vh - 4rem);
+  text-align: center;
 }
-.header.open {
-  position: static;
+@media (min-width: 48em) {
+  .showcase {
+    background: url(../assets/images/home-hero-tablet.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+@media (min-width: 90em) {
+  .showcase {
+    background-image: url(../assets/images/home-hero-desktop.jpg);
+  }
+}
+.showcase__hero {
+  color: #ffffff;
+  padding-top: 7.1875rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.showcase__hero > *:not(:last-child) {
+  margin-bottom: 32px;
+}
+.showcase__title {
+  font-weight: 700;
+  font-family: "Space Mono", monospace;
+  letter-spacing: 0.111875rem;
+}
+.showcase__btn {
+  display: inline-block;
+  margin-top: 0.625rem;
+}
+
+.header {
+  position: relative;
 }
 @media (min-width: 48em) {
   .header {
     height: 6rem;
   }
 }
-.header__overlay {
+.header__wrap {
   position: fixed;
-  background-color: rgba(0, 0, 0, 0.75);
-  width: 100%;
-  height: 100%;
+  top: 0;
   left: 0;
-  top: 4rem;
-  transform: translateX(-100%);
-  transition: all 200ms ease-in-out;
+  display: flex;
+  background-color: #ffffff;
+  align-items: center;
+  height: 4rem;
+  width: 100%;
+  z-index: 100;
 }
-.header__overlay.open {
-  transform: translateX(0);
-  transition: all 200ms ease-in-out;
+@media (min-width: 48em) {
+  .header__wrap {
+    height: 6rem;
+    justify-content: space-between;
+  }
 }
 .header__toggle {
   cursor: pointer;
-  border: 1px solid black;
 }
 .header__toggle > span {
   display: block;
@@ -161,57 +206,72 @@ a {
 .header__logo {
   margin: 0 auto;
 }
+@media (min-width: 48em) {
+  .header__logo {
+    margin: 0;
+  }
+}
 .header__nav {
+  display: none;
+  height: 100%;
+}
+.header__nav--btn {
+  display: none;
+}
+@media (min-width: 48em) {
+  .header__nav--btn {
+    display: block;
+  }
+}
+@media (min-width: 48em) {
+  .header__nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 0;
+  }
+}
+@media (min-width: 90em) {
+  .header__nav {
+    margin-right: auto;
+    padding-left: 3.6875rem;
+  }
+}
+@media (min-width: 48em) {
+  .header__links:not(:last-child) {
+    margin-right: 2rem;
+  }
+}
+.header__mobile {
   position: fixed;
   background-color: #333a44;
-  width: 16rem;
+  width: 100%;
   height: 100%;
   left: 0;
   top: 4rem;
-  justify-content: space-between;
   flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   transform: translateX(-100%);
   overflow-x: hidden;
   transition: all 200ms ease-in-out;
 }
-.header__nav.open {
+.header__mobile.open {
   transform: translate(0);
   transition: all 200ms ease-in-out;
-}
-@media (min-width: 48em) {
-  .header__nav {
-    background-color: transparent;
-    transform: translate(0);
-    position: relative;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    top: 0;
-  }
 }
 .header__menu {
   flex-direction: column;
   padding-top: 4rem;
-  padding-left: 2rem;
-}
-@media (min-width: 48em) {
-  .header__menu {
-    flex-direction: row;
-    margin-left: 3.6875rem;
-    padding-top: 0;
-  }
+  font-family: "Space Mono", monospace;
+  text-align: center;
 }
 .header__menu > li:not(:last-child) {
   margin-bottom: 1.5rem;
 }
-@media (min-width: 48em) {
-  .header__menu > li:not(:last-child) {
-    margin-bottom: 0;
-  }
-  .header__menu > li:not(:last-child):not(:last-child) {
-    margin-right: 2rem;
-  }
+.header__menu > li a {
+  color: #ffffff;
+  font-size: 1.5rem;
 }
 .header__link {
   line-height: 25px;

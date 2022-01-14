@@ -9,46 +9,67 @@
   <title>Scoot</title>
 </head>
 <body>
-  <header class="header container">
-    <div class="header__overlay"></div>
-    <div class="header__toggle">
-      <span class="header__line"></span>
-      <span class="header__line"></span>
-      <span class="header__line"></span>
-    </div>
-
-    <div class="header__logo">
-      <img src="assets/logo.svg" alt="Scoot logo">
-    </div>
-
-    <div class="header__nav flex">
-      <ul class="header__menu flex">
+  <header class="header">
+    <nav class="header__wrap container">
+      <div class="header__toggle">
+        <span class="header__line"></span>
+        <span class="header__line"></span>
+        <span class="header__line"></span>
+      </div>
+      <div class="header__logo">
+        <img src="assets/logo.svg" alt="Scoot logo">
+      </div>
+      
+      <ul class="header__nav hide-for-mobile">
         <li class="header__links"><a href="index.html" class="header__link">About</a></li>
         <li class="header__links"><a href="index.html" class="header__link">Location</a></li>
         <li class="header__links"><a href="index.html" class="header__link">Careers</a></li>
-      </ul>
-      <div class="header__btn hide-for-desktop">
-        <a class="button" href="index.html">Get Scootin</a>
-      </div>
-      
-    </div>
+      </ul>    
+
+      <a class="button header__nav--btn" href="index.html">Get Scootin</a>
+         
+       
+    </nav>
     
-    <!-- <a class="header__btn button hide-for-mobile" href="#">Get Scootin</a>     -->
+      <div class="header__mobile flex">
+        <ul class="header__menu flex">
+          <li><a href="index.html">About</a></li>
+          <li><a href="index.html">Location</a></li>
+          <li><a href="index.html">Careers</a></li>
+        </ul>
+        <div class="header__btn">
+          <a class="button" href="index.html">Get Scootin</a>
+        </div>       
+               
+      </div>
+           
+     
+    
+    
   </header>
 
-  About
-  Location
-  Careers
-
-  Get Scootin
+  <section class="showcase">
+    <div class="showcase__hero">
+      <div class="showcase__title font-h3 lh-2">
+        <p>Scooter sharing made simple</p>
+      </div>
+      <div class="showcase__text">
+        <p class="lh-4">Scoot takes the hassle out of urban mobility. Our bikes are placed in convenient 
+          locations in each of our cities. Use our app to locate the nearest bike, unlock 
+          it with a tap, and you’re away!</p>
+      </div>
+      <div class="showcase__btn">
+        <a class="button" href="index.html">Get Scootin</a>
+      </div>
+    </div>    
+  </section>
+ 
 
 
 
   Scooter sharing made simple
 
-  Scoot takes the hassle out of urban mobility. Our bikes are placed in convenient 
-  locations in each of our cities. Use our app to locate the nearest bike, unlock 
-  it with a tap, and you’re away!
+  
 
   Get Scootin
 

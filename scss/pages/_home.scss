@@ -1,0 +1,40 @@
+@use "../abstracts/colors" as *;
+@use "../abstracts/mixins" as m;
+
+.showcase {
+  background: url(../assets/images/home-hero-mobile.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: calc(100vh - 4rem);
+  text-align: center;
+  @include m.breakpoints-up(medium) {
+    background: url(../assets/images/home-hero-tablet.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  @include m.breakpoints-up(xlarge) {
+    background-image: url(../assets/images/home-hero-desktop.jpg);
+  }
+  &__hero {
+    color: $white;
+    padding-top: 7.1875rem; //115px
+    padding-left: 2rem; // 32px
+    padding-right: 2rem;
+    > *:not(:last-child) {
+      margin-bottom: 32px;
+    }
+  }
+  &__title {
+    font-weight: 700;
+    font-family: "Space Mono", monospace;
+    letter-spacing: 0.111875rem; //-1.79px
+  }
+  &__text {
+  }
+  &__btn {
+    display: inline-block;
+    margin-top: 0.625rem; // 10px
+  }
+}
