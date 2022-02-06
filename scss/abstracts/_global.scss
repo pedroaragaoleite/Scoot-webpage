@@ -1,6 +1,7 @@
 @use "../abstracts/mixins" as m;
 
 body {
+  overflow-x: hidden;
   &.noscroll {
     overflow: hidden;
   }
@@ -20,13 +21,20 @@ body {
 
 .container {
   padding: 0 2rem; //32px
+  @include m.breakpoints-up(medium) {
+    padding: 0 2.5rem; // 40px
+  }
   @include m.breakpoints-up(xlarge) {
-    padding: 0 12.25rem; //196px
+    padding: 0 10.5625rem; //169px
   }
 }
 
 .flex {
   display: flex;
+}
+
+.grid {
+  display: grid;
 }
 
 a {

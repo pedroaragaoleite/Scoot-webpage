@@ -1,40 +1,291 @@
 @use "../abstracts/colors" as *;
 @use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as *;
 
 .showcase {
+  position: relative;
   background: url(../assets/images/home-hero-mobile.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: calc(100vh - 4rem);
+  height: 40.625rem; //650px
   text-align: center;
   @include m.breakpoints-up(medium) {
     background: url(../assets/images/home-hero-tablet.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    height: 40.625rem; //650px
   }
   @include m.breakpoints-up(xlarge) {
     background-image: url(../assets/images/home-hero-desktop.jpg);
   }
   &__hero {
     color: $white;
+    margin-top: 4rem;
     padding-top: 7.1875rem; //115px
     padding-left: 2rem; // 32px
     padding-right: 2rem;
     > *:not(:last-child) {
       margin-bottom: 32px;
     }
+    @include m.breakpoints-up(medium) {
+      margin-top: 0;
+      padding-left: 6.0625rem; //98px
+      padding-right: 6.0625rem; //98px
+    }
+    @include m.breakpoints-up(xlarge) {
+      width: 60%;
+      padding-top: 9.5625rem; // 153px;
+      padding-left: 10.3125rem; //165px
+      padding-right: 10.3125rem; //165px
+    }
   }
   &__title {
     font-weight: 700;
     font-family: "Space Mono", monospace;
-    letter-spacing: 0.111875rem; //-1.79px
+    letter-spacing: -0.111875rem; //-1.79px
+    @include m.breakpoints-up(medium) {
+      font-size: $font-size-h1;
+      line-height: 3.5rem; // 56px
+      letter-spacing: -0.15625rem; //2.5px
+    }
+    @include m.breakpoints-up(xlarge) {
+      width: 90%;
+      text-align: left;
+    }
   }
   &__text {
+    @include m.breakpoints-up(xlarge) {
+      margin-left: auto;
+      width: 78%;
+      text-align: left;
+    }
   }
   &__btn {
     display: inline-block;
-    margin-top: 0.625rem; // 10px
+    margin-top: 2rem; // 32px
+    @include m.breakpoints-up(xlarge) {
+      // width: 78%;
+      text-align: left;
+    }
+  }
+  .line {
+    display: none;
+    @include m.breakpoints-up(xlarge) {
+      display: block;
+      position: absolute;
+      bottom: 16.25rem; //260px;
+      left: 0;
+    }
+  }
+  .arrow-right {
+    position: absolute;
+    left: -18.75rem; // -300px;
+    // width: 100%;
+    bottom: 0.5rem; // 8px;
+    @include m.breakpoints-up(medium) {
+      left: -9.375rem; // -150px;
+    }
+    @include m.breakpoints-up(xlarge) {
+      left: 47.5rem; // 760px;
+      bottom: 8.125rem; //130px;
+    }
+  }
+  .circles {
+    display: none;
+    @include m.breakpoints-up(medium) {
+      display: block;
+      position: absolute;
+      right: -1.5625rem; // -25px;
+      bottom: 3.125rem; // 50px;
+    }
+    @include m.breakpoints-up(xlarge) {
+      bottom: 10.9375rem; // 175px;
+    }
+  }
+}
+
+// Steps Section
+
+.steps {
+  position: relative;
+  .vertical-line {
+    display: none;
+    @include m.breakpoints-up(medium) {
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 8.625rem; // 138px;
+      z-index: -1;
+    }
+    @include m.breakpoints-up(xlarge) {
+      display: none;
+    }
+  }
+  .horizontal-line {
+    display: none;
+    @include m.breakpoints-up(xlarge) {
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 10rem;
+      z-index: -1;
+    }
+  }
+  width: 100%;
+  padding: 7.5rem 2rem; // 120px 32px
+  text-align: center;
+  flex-direction: column;
+  > *:not(:last-child) {
+    margin-bottom: 3rem; // 48px
+  }
+  @include m.breakpoints-up(medium) {
+    padding-left: 6.0625rem; //98px
+    padding-right: 6.0625rem; //98px
+  }
+  @include m.breakpoints-up(xlarge) {
+    padding-left: 10.3125rem; //165px
+    padding-right: 10.3125rem; //165px
+    flex-direction: row;
+  }
+  img {
+    margin: 0 auto;
+    margin-bottom: 1.5rem; // 24px
+    @include m.breakpoints-up(xlarge) {
+      margin-left: inherit;
+    }
+  }
+  &__item {
+    @include m.breakpoints-up(medium) {
+      display: flex;
+    }
+    @include m.breakpoints-up(xlarge) {
+      flex-direction: column;
+      padding-right: 32px;
+    }
+  }
+  &__text {
+    @include m.breakpoints-up(medium) {
+      padding-left: 5rem; // 80px
+      text-align: left;
+    }
+    @include m.breakpoints-up(xlarge) {
+      // text-align: center;
+      padding-left: 0;
+    }
+  }
+  &__title {
+    font-weight: 700;
+    margin-bottom: 1.5rem; // 24px
+  }
+}
+
+// Features Section
+
+.features {
+  // flex-direction: column;
+  &__item {
+    position: relative;
+    // grid-template-rows: 1fr;
+    padding: 0 2rem; // 32px
+    text-align: center;
+    margin-bottom: 7.5rem; // 120px
+    @include m.breakpoints-up(medium) {
+      padding: 0 6.0625rem; // 98px
+    }
+    @include m.breakpoints-up(xlarge) {
+      padding: 0 10.3125rem; //165px;
+      grid-template-areas: "two one";
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      text-align: left;
+    }
+  }
+  &__grid--one {
+    @include m.breakpoints-up(xlarge) {
+      grid-area: one;
+    }
+  }
+  &__img {
+    margin: 0 auto;
+    border-radius: 50%;
+    margin-bottom: 3.5rem; // 56px
+  }
+  &__img--one {
+    @include m.breakpoints-up(xlarge) {
+      margin-right: 0;
+    }
+  }
+  &__img--two {
+    @include m.breakpoints-up(xlarge) {
+      margin-left: 0;
+    }
+  }
+  &__img--three {
+    @include m.breakpoints-up(xlarge) {
+      margin-right: 0;
+    }
+  }
+  &__arrow--left {
+    position: absolute;
+    top: 14.375rem; // 230px
+    @include m.breakpoints-up(medium) {
+      top: 18rem; // 288px
+    }
+  }
+  &__arrow--right {
+    position: absolute;
+    top: 13.4375rem; // 215px
+    left: 0;
+    @include m.breakpoints-up(medium) {
+      top: 0;
+    }
+  }
+  &__circle--right {
+    display: none;
+    @include m.breakpoints-up(medium) {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: -21.875rem; // -350px;
+    }
+  }
+  &__circle--left {
+    display: none;
+    @include m.breakpoints-up(medium) {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: -21.875rem; // -350px;
+    }
+  }
+  &__text {
+    > *:not(:last-child) {
+      margin-bottom: 2rem; // 32px
+    }
+    @include m.breakpoints-up(xlarge) {
+      width: 80%;
+    }
+  }
+  &__text--left {
+    @include m.breakpoints-up(xlarge) {
+      margin-right: auto;
+    }
+  }
+  &__text--right {
+    @include m.breakpoints-up(xlarge) {
+      margin-left: auto;
+    }
+  }
+  &__title > p {
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    letter-spacing: -1.43px;
+    @include m.breakpoints-up(medium) {
+      font-size: 48px;
+      line-height: 48px;
+      letter-spacing: -2.14px;
+    }
   }
 }

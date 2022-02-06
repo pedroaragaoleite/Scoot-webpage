@@ -89,6 +89,7 @@
     }
   }
   &__mobile {
+    z-index: 100;
     position: fixed;
     background-color: $gray;
     width: 100%;
@@ -128,6 +129,9 @@
     font-family: "Space Mono", monospace;
     color: $dimgray;
     z-index: 10;
+    &:hover {
+      color: $yellow;
+    }
     @include m.breakpoints-up(medium) {
       font-size: 0.9375rem; //15px
     }

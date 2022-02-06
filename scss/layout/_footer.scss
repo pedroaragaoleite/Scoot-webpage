@@ -1,0 +1,130 @@
+@use "../abstracts/colors" as *;
+@use "../abstracts/mixins" as m;
+
+.footer {
+  &__download {
+    padding: 5.5rem 0; // 88px
+    background: $darknavy;
+    @include m.breakpoints-up(medium) {
+      padding: 3.875rem 0; // 62px
+    }
+    @include m.breakpoints-up(xlarge) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6.375rem 10.3125rem; //165px;
+    }
+  }
+  &__title {
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    text-align: center;
+    color: $white;
+    @include m.breakpoints-up(medium) {
+      font-size: 48px;
+      line-height: 48px;
+      letter-spacing: -2.14px;
+    }
+    @include m.breakpoints-up(xlarge) {
+      width: 415px;
+      text-align: left;
+    }
+  }
+  &__apps {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8125rem; // 12px
+    margin-top: 2.5rem; // 40px
+    @include m.breakpoints-up(xlarge) {
+      margin-top: 0;
+    }
+  }
+  &__img {
+    width: 8.125rem; // 130px
+    height: 2.5rem; // 40px
+  }
+  &__nav {
+    padding: 4rem 0 5.5rem 0; //64px 88px
+    background: $gray;
+    text-align: center;
+    @include m.breakpoints-up(medium) {
+      display: flex;
+      align-items: center;
+      padding: 2rem 2.5rem; //32px
+    }
+  }
+  &__logo {
+    img {
+      margin: 0 auto;
+      color: $white;
+    }
+  }
+  &__navbar {
+    width: 100%;
+    margin: 2.5rem 0 5.5rem 0; // 40px 88px
+    > *:not(:last-child) {
+      margin-bottom: 1rem; // 16px
+      @include m.breakpoints-up(medium) {
+        margin-bottom: 0;
+        margin-right: 2rem;
+      }
+    }
+    @include m.breakpoints-up(medium) {
+      display: flex;
+      margin: 0;
+      margin-left: 3.625rem; // 58px
+    }
+  }
+  &__links {
+    line-height: 1.5625rem; // 25px
+  }
+  &__link {
+    color: $dimgray;
+    &:hover {
+      color: $yellow;
+    }
+  }
+  &__media {
+    display: flex;
+    justify-content: center;
+    > *:not(:last-child) {
+      margin-right: 1.5rem; // 24px
+    }
+  }
+  &__icons {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  &__icon1 {
+    background-image: url(../assets/icons/facebook.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 24px;
+    height: 24px;
+    &:hover {
+      background-image: url(../assets/icons/facebook-hover.svg);
+    }
+  }
+  &__icon2 {
+    background-image: url(../assets/icons/twitter.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 24px;
+    height: 24px;
+    &:hover {
+      background-image: url(../assets/icons/twitter-hover.svg);
+    }
+  }
+  &__icon3 {
+    background-image: url(../assets/icons/instagram.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 24px;
+    height: 24px;
+    &:hover {
+      background-image: url(../assets/icons/instagram-hover.svg);
+    }
+  }
+}
