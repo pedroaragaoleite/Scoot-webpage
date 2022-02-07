@@ -1,0 +1,13 @@
+@use "../abstracts/colors" as *;
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as *;
+
+.bg2 {
+  background-image: url(../assets/images/careers-location-hero-mobile.jpg);
+  @include m.breakpoints-up(medium) {
+    background-image: url(../assets/images/careers-locations-hero-tablet.jpg);
+  }
+  @include m.breakpoints-up(xlarge) {
+    background-image: url(../assets/images/careers-locations-hero-desktop.jpg);
+  }
+}

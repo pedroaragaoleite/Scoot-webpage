@@ -22,7 +22,7 @@ body {
 .container {
   padding: 0 2rem; //32px
   @include m.breakpoints-up(medium) {
-    padding: 0 2.5rem; // 40px
+    padding: 0 6.0625rem; // 98px
   }
   @include m.breakpoints-up(xlarge) {
     padding: 0 10.5625rem; //169px
@@ -41,4 +41,115 @@ a {
   font-size: 0.9375rem; // 15px
   line-height: 1.5625rem; //25px
   font-weight: bold;
+}
+
+// Features Section
+
+.features {
+  @include m.breakpoints-up(medium) {
+    padding: 0 10.5625rem; //169px
+  }
+  &__item {
+    position: relative;
+    text-align: center;
+    margin-bottom: 7.5rem; // 120px
+    @include m.breakpoints-up(xlarge) {
+      grid-template-areas: "two one";
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      text-align: left;
+    }
+  }
+  &__grid--one {
+    @include m.breakpoints-up(xlarge) {
+      grid-area: one;
+    }
+  }
+  &__img {
+    margin: 0 auto;
+    border-radius: 50%;
+    margin-bottom: 3.5rem; // 56px
+  }
+  &__img--one {
+    @include m.breakpoints-up(xlarge) {
+      margin-right: 0;
+    }
+  }
+  &__img--two {
+    @include m.breakpoints-up(xlarge) {
+      margin-left: 0;
+    }
+  }
+  &__img--three {
+    @include m.breakpoints-up(xlarge) {
+      margin-right: 0;
+    }
+  }
+  &__arrow--left {
+    position: absolute;
+    top: 14.375rem; // 230px
+    right: -5rem;
+    @include m.breakpoints-up(medium) {
+      top: 18rem; // 288px
+      right: -11rem; // 176px
+    }
+    @include m.breakpoints-up(xlarge) {
+      right: -32rem; // 512px
+    }
+  }
+  &__arrow--right {
+    position: absolute;
+    top: 13.4375rem; // 215px
+    left: -5rem;
+    @include m.breakpoints-up(medium) {
+      left: -11rem; // 176px
+      top: 0;
+    }
+  }
+  &__circle--right {
+    display: none;
+    @include m.breakpoints-up(medium) {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: -30rem; // -445px;
+    }
+  }
+  &__circle--left {
+    display: none;
+    @include m.breakpoints-up(medium) {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: -30rem; // -445px;
+    }
+  }
+  &__text {
+    > *:not(:last-child) {
+      margin-bottom: 2rem; // 32px
+    }
+    @include m.breakpoints-up(xlarge) {
+      width: 80%;
+    }
+  }
+  &__text--left {
+    @include m.breakpoints-up(xlarge) {
+      margin-right: auto;
+    }
+  }
+  &__text--right {
+    @include m.breakpoints-up(xlarge) {
+      margin-left: auto;
+    }
+  }
+  &__title > p {
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    letter-spacing: -1.43px;
+    @include m.breakpoints-up(medium) {
+      font-size: 48px;
+      line-height: 48px;
+      letter-spacing: -2.14px;
+    }
+  }
 }

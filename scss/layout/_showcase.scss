@@ -1,0 +1,60 @@
+@use "../abstracts/colors" as *;
+@use "../abstracts/mixins" as m;
+
+// Showcase About / Locations / Careers
+
+.main {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 10rem; // 160px
+  padding-top: 4rem;
+  margin-bottom: 4.5rem; // 72px
+  @include m.breakpoints-up(medium) {
+    height: 12.5rem; // 200px
+    padding-top: 0;
+    margin-bottom: 9rem; // 144px
+  }
+  @include m.breakpoints-up(xlarge) {
+    margin-bottom: 7.5rem; // 120px
+  }
+  &__hero {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+  }
+  &__title {
+    width: 100%;
+    height: 100%;
+    p {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: "Space Mono", monospace;
+      font-weight: 700;
+      letter-spacing: -0.111875rem; // -1.79px;
+      color: $white;
+      text-align: center;
+      @include m.breakpoints-up(medium) {
+        text-align: left;
+        padding-left: 6.0625rem; // 96px
+      }
+      @include m.breakpoints-up(xlarge) {
+        padding-left: 0;
+      }
+    }
+  }
+  &__circles {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    @include m.breakpoints-up(medium) {
+      display: block;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
