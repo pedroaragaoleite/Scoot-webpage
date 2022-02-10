@@ -77,6 +77,7 @@ body {
   color: #ffffff;
   line-height: 1.5625rem;
   padding: 0.875rem 3rem;
+  border: 2px solid #fcb72b;
 }
 .button:hover {
   background-color: #ffffff;
@@ -590,6 +591,71 @@ a {
   }
 }
 
+.bg2 {
+  background-image: url(../assets/images/careers-location-hero-mobile.jpg);
+}
+@media (min-width: 48em) {
+  .bg2 {
+    background-image: url(../assets/images/careers-locations-hero-tablet.jpg);
+  }
+}
+@media (min-width: 90em) {
+  .bg2 {
+    background-image: url(../assets/images/careers-locations-hero-desktop.jpg);
+  }
+}
+
+.jobs {
+  flex-direction: column;
+  text-align: center;
+  gap: 1rem;
+  margin-bottom: 7.5rem;
+}
+@media (min-width: 90em) {
+  .jobs {
+    margin-bottom: 10.3125rem;
+  }
+}
+.jobs__offer {
+  flex-direction: column;
+  align-items: center;
+  background-color: #f2f5f9;
+  padding: 2rem 2rem 2rem 2rem;
+}
+@media (min-width: 48em) {
+  .jobs__offer {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+.jobs__position {
+  width: 100%;
+}
+@media (min-width: 48em) {
+  .jobs__position {
+    text-align: left;
+  }
+}
+.jobs__title h3 {
+  font-family: "Space Mono", monospace;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+}
+.jobs__location p {
+  line-height: 1.5625rem;
+}
+.jobs__btn {
+  display: inline-block;
+  width: 250px;
+  max-width: 300px;
+  margin-top: 1rem;
+}
+@media (min-width: 48em) {
+  .jobs__btn {
+    width: 180px;
+  }
+}
+
 .header {
   position: relative;
 }
@@ -949,6 +1015,7 @@ a {
 
 .about {
   text-align: center;
+  margin-bottom: 145px;
 }
 .about__title {
   font-family: "Space Mono", monospace;
@@ -959,14 +1026,19 @@ a {
 .about__items {
   flex-direction: column;
 }
+.about__items > *:not(:last-child) {
+  margin-bottom: 3.4375rem;
+}
+@media (min-width: 90em) {
+  .about__items > *:not(:last-child) {
+    margin-bottom: 0;
+  }
+}
 @media (min-width: 90em) {
   .about__items {
     flex-direction: row;
     gap: 1.875rem;
   }
-}
-.about__item {
-  margin-bottom: 3.4375rem;
 }
 .about__img {
   position: relative;

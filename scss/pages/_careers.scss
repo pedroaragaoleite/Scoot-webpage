@@ -11,3 +11,50 @@
     background-image: url(../assets/images/careers-locations-hero-desktop.jpg);
   }
 }
+
+.jobs {
+  flex-direction: column;
+  text-align: center;
+  gap: 1rem;
+  margin-bottom: 7.5rem; // 120px
+  @include m.breakpoints-up(xlarge) {
+    margin-bottom: 10.3125rem; //165px
+  }
+  &__offer {
+    flex-direction: column;
+    align-items: center;
+    background-color: $snow;
+    padding: 2rem 2rem 2rem 2rem;
+    @include m.breakpoints-up(medium) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  &__position {
+    width: 100%;
+    @include m.breakpoints-up(medium) {
+      text-align: left;
+    }
+  }
+  &__title {
+    h3 {
+      font-family: "Space Mono", monospace;
+      font-size: 1.125rem; //18px
+      line-height: 1.5rem; //24px
+    }
+  }
+  &__location {
+    p {
+      line-height: 1.5625rem; //25px
+    }
+  }
+  &__btn {
+    display: inline-block;
+    width: 250px;
+    max-width: 300px;
+    margin-top: 1rem;
+    @include m.breakpoints-up(medium) {
+      width: 180px;
+    }
+  }
+}
