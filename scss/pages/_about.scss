@@ -11,3 +11,92 @@
     background-image: url(../assets/images/about-hero-desktop.jpg);
   }
 }
+
+.faq {
+  text-align: center;
+  margin-bottom: 7.5rem; // 120px
+  > *:nth-child(2) {
+    margin-bottom: 3rem;
+  }
+  &__questions {
+    width: 100%;
+    flex-direction: column;
+    @include m.breakpoints-up(xlarge) {
+      flex-direction: row;
+    }
+  }
+  &__items {
+    width: 100%;
+    flex-direction: column;
+    gap: 1rem; // 16px
+    @include m.breakpoints-up(xlarge) {
+      width: 70%;
+    }
+  }
+  &__title {
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    letter-spacing: -0.1375rem; //2.14px
+    margin-bottom: 3rem; // 48px
+  }
+  &__subtitle {
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    letter-spacing: -0.066875rem; //1.07px
+    margin-bottom: 2rem; // 32px
+    @include m.breakpoints-up(xlarge) {
+      width: 30%;
+    }
+  }
+  &__item {
+    background-color: $snow;
+  }
+  &__question {
+    padding: 2rem 2rem 2rem 2rem;
+    align-items: center;
+    text-align: left;
+    justify-content: space-between;
+    p {
+      font-size: 1.125rem; // 18px
+      line-height: 1.5rem; // 24px
+      font-weight: 700;
+      letter-spacing: -0.05rem; // 0.8px
+    }
+  }
+  &__button {
+    border: none;
+    width: 1rem;
+    height: 1rem;
+    margin-left: 1rem; // 16px
+    cursor: pointer;
+  }
+  &__icon--down {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $yellow;
+  }
+  &__icon--up {
+    display: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $yellow;
+  }
+  &__answer {
+    display: none;
+    padding: 0 2rem 2rem 2rem;
+    text-align: left;
+  }
+
+  &__show-text &__answer {
+    display: block;
+  }
+  &__show-text &__icon--up {
+    display: block;
+  }
+  &__show-text &__icon--down {
+    display: none;
+  }
+  &__show-text &__answer {
+    display: block;
+  }
+}

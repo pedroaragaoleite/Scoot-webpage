@@ -4,6 +4,10 @@ const body = document.querySelector("body");
 const header = document.querySelector(".header");
 
 
+// Faq section
+const items = document.querySelectorAll('.faq__item');
+
+
 let showMenu = false;
 
 burguer.addEventListener('click', toggleMenu);
@@ -28,7 +32,23 @@ window.addEventListener("scroll", function() {
     header.classList.toggle("sticky", window.screenY > 0 );
 })
 
-// burguer.addEventListener("click", () => {
-//     if(nav.contains)
-//     console.log("clicked");
-// });
+
+
+// Faq section
+
+items.forEach(function(item) {
+
+    const btn = item.querySelector('.faq__button');
+
+    btn.addEventListener("click", () => {
+
+        // Remove show text from the question not choosen
+        items.forEach(function(question) {
+            if(question !== item) {
+                question.classList.remove('faq__show-text');
+            }
+        })
+        item.classList.toggle('faq__show-text');
+    })
+});
+
