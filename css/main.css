@@ -78,6 +78,8 @@ body {
   line-height: 1.5625rem;
   padding: 0.875rem 3rem;
   border: 2px solid #fcb72b;
+  font-size: 1.2rem;
+  font-weight: 700;
 }
 .button:hover {
   background-color: #ffffff;
