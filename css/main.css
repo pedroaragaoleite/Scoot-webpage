@@ -941,36 +941,6 @@ a {
   width: 100%;
   height: 100%;
 }
-.footer__icon1 {
-  background-image: url(../assets/icons/facebook.svg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 24px;
-  height: 24px;
-}
-.footer__icon1:hover {
-  background-image: url(../assets/icons/facebook-hover.svg);
-}
-.footer__icon2 {
-  background-image: url(../assets/icons/twitter.svg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 24px;
-  height: 24px;
-}
-.footer__icon2:hover {
-  background-image: url(../assets/icons/twitter-hover.svg);
-}
-.footer__icon3 {
-  background-image: url(../assets/icons/instagram.svg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 24px;
-  height: 24px;
-}
-.footer__icon3:hover {
-  background-image: url(../assets/icons/instagram-hover.svg);
-}
 
 .main {
   background-repeat: no-repeat;
