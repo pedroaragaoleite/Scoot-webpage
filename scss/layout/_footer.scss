@@ -51,7 +51,10 @@
     @include m.breakpoints-up(medium) {
       display: flex;
       align-items: center;
-      padding: 2rem 2.5rem; //32px
+      padding: 2rem 6.0625rem;
+    }
+    @include m.breakpoints-up(xlarge) {
+      padding: 2rem 10.5625rem;
     }
   }
   &__logo {
@@ -93,9 +96,14 @@
     }
   }
   &__icons {
+  }
+  &__icon {
     display: block;
-    width: 100%;
-    height: 100%;
+    width: 24px;
+    height: 24px;
+    &:hover {
+      transform: scale(1.1);
+    }
   }
   // &__icon1 {
   //   &:hover {

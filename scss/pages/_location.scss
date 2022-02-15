@@ -13,6 +13,10 @@
 }
 
 .locations {
+  margin-bottom: 4.5rem; // 72px
+  @include m.breakpoints-up(medium) {
+    margin-bottom: 7.5rem; // 120px
+  }
   &__map {
     background-image: url(../assets/images/world-map-mobile.png);
     background-repeat: no-repeat;
@@ -24,18 +28,68 @@
       background-image: url(../assets/images/world-map-tablet1.png);
       background-size: cover;
       max-width: 100%;
-      height: 324px;
+      height: 400px;
     }
     @include m.breakpoints-up(xlarge) {
-      background-image: url(../assets/images/world-map-desktop1.png);
+      background-image: url(../assets/images/worldmap-desktop3.png);
+      background-size: contain;
+      height: 543px;
     }
   }
   &__cities {
+    flex-direction: column;
+    align-items: center;
+    font-family: "Space Mono", monospace;
+    margin-bottom: 4.5rem; // 72px
+    > *:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+    @include m.breakpoints-up(medium) {
+      display: none;
+    }
   }
   &__city {
+    text-align: center;
+    font-size: 1.5rem; // 24px
+    line-height: 1.75rem; //28px
+    letter-spacing: -0.066875rem; //-1.07px;
+    font-weight: 700;
+    width: 300px;
+    padding: 25px 0;
+    background-color: rgba(252, 183, 43, 0.2);
   }
-}
-
-.message {
-  text-align: center;
+  &__msg {
+    text-align: center;
+    @include m.breakpoints-up(xlarge) {
+      display: flex;
+      align-items: center;
+      text-align: left;
+      justify-content: space-between;
+      // flex-direction: column;
+    }
+    > *:not(:last-child) {
+      margin-bottom: 2rem;
+      @include m.breakpoints-up(medium) {
+        margin-bottom: 2.5rem; // 40px
+        margin-top: 2.5rem; // 40px
+      }
+    }
+    h4 {
+      font-family: "Space Mono", monospace;
+      letter-spacing: -0.089375rem; // -1.43px
+      @include m.breakpoints-up(xlarge) {
+        width: 30%;
+        font-size: 48px;
+        line-height: 48px;
+      }
+    }
+    p {
+      @include m.breakpoints-up(xlarge) {
+        width: 40%;
+      }
+    }
+    &__btn {
+      width: 30%;
+    }
+  }
 }

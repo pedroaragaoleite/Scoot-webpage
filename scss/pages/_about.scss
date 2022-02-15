@@ -56,6 +56,9 @@
     align-items: center;
     text-align: left;
     justify-content: space-between;
+    &:hover {
+      background-color: rgba(252, 183, 43, 0.2);
+    }
     p {
       font-size: 1.125rem; // 18px
       line-height: 1.5rem; // 24px
@@ -83,7 +86,7 @@
   }
   &__answer {
     display: none;
-    padding: 0 2rem 2rem 2rem;
+    padding: 2rem 2rem 2rem 2rem;
     text-align: left;
   }
 

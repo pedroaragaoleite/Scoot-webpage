@@ -313,7 +313,7 @@ a {
 @media (min-width: 48em) {
   .showcase__title {
     font-size: 3.5rem;
-    line-height: 3.5rem;
+    line-height: 4rem;
     letter-spacing: -0.15625rem;
   }
 }
@@ -537,6 +537,9 @@ a {
   text-align: left;
   justify-content: space-between;
 }
+.faq__question:hover {
+  background-color: rgba(252, 183, 43, 0.2);
+}
 .faq__question p {
   font-size: 1.125rem;
   line-height: 1.5rem;
@@ -563,7 +566,7 @@ a {
 }
 .faq__answer {
   display: none;
-  padding: 0 2rem 2rem 2rem;
+  padding: 2rem 2rem 2rem 2rem;
   text-align: left;
 }
 .faq__show-text .faq__answer {
@@ -593,6 +596,14 @@ a {
   }
 }
 
+.locations {
+  margin-bottom: 4.5rem;
+}
+@media (min-width: 48em) {
+  .locations {
+    margin-bottom: 7.5rem;
+  }
+}
 .locations__map {
   background-image: url(../assets/images/world-map-mobile.png);
   background-repeat: no-repeat;
@@ -606,16 +617,78 @@ a {
     background-image: url(../assets/images/world-map-tablet1.png);
     background-size: cover;
     max-width: 100%;
-    height: 324px;
+    height: 400px;
   }
 }
 @media (min-width: 90em) {
   .locations__map {
-    background-image: url(../assets/images/world-map-desktop1.png);
+    background-image: url(../assets/images/worldmap-desktop3.png);
+    background-size: contain;
+    height: 543px;
   }
 }
-.message {
+.locations__cities {
+  flex-direction: column;
+  align-items: center;
+  font-family: "Space Mono", monospace;
+  margin-bottom: 4.5rem;
+}
+.locations__cities > *:not(:last-child) {
+  margin-bottom: 1rem;
+}
+@media (min-width: 48em) {
+  .locations__cities {
+    display: none;
+  }
+}
+.locations__city {
   text-align: center;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  letter-spacing: -0.066875rem;
+  font-weight: 700;
+  width: 300px;
+  padding: 25px 0;
+  background-color: rgba(252, 183, 43, 0.2);
+}
+.locations__msg {
+  text-align: center;
+}
+@media (min-width: 90em) {
+  .locations__msg {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    justify-content: space-between;
+  }
+}
+.locations__msg > *:not(:last-child) {
+  margin-bottom: 2rem;
+}
+@media (min-width: 48em) {
+  .locations__msg > *:not(:last-child) {
+    margin-bottom: 2.5rem;
+    margin-top: 2.5rem;
+  }
+}
+.locations__msg h4 {
+  font-family: "Space Mono", monospace;
+  letter-spacing: -0.089375rem;
+}
+@media (min-width: 90em) {
+  .locations__msg h4 {
+    width: 30%;
+    font-size: 48px;
+    line-height: 48px;
+  }
+}
+@media (min-width: 90em) {
+  .locations__msg p {
+    width: 40%;
+  }
+}
+.locations__msg__btn {
+  width: 30%;
 }
 
 .bg2 {
@@ -896,7 +969,12 @@ a {
   .footer__nav {
     display: flex;
     align-items: center;
-    padding: 2rem 2.5rem;
+    padding: 2rem 6.0625rem;
+  }
+}
+@media (min-width: 90em) {
+  .footer__nav {
+    padding: 2rem 10.5625rem;
   }
 }
 .footer__logo img {
@@ -939,10 +1017,13 @@ a {
 .footer__media > *:not(:last-child) {
   margin-right: 1.5rem;
 }
-.footer__icons {
+.footer__icon {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 24px;
+  height: 24px;
+}
+.footer__icon:hover {
+  transform: scale(1.1);
 }
 
 .main {
