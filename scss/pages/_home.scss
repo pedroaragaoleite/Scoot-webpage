@@ -3,6 +3,7 @@
 @use "../abstracts/variables" as *;
 
 .showcase {
+  overflow-x: hidden;
   position: relative;
   background: url(../assets/images/home-hero-mobile.jpg);
   background-position: center center;
