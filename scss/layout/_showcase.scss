@@ -40,6 +40,8 @@
       @include m.breakpoints-up(medium) {
         text-align: left;
         padding-left: 6.0625rem; // 96px
+        font-size: 3.5rem; // 56px
+        line-height: 3.5rem; // 56px
       }
       @include m.breakpoints-up(xlarge) {
         padding-left: 0;
