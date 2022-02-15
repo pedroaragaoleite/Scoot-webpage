@@ -46,7 +46,7 @@ a {
 // Features Section
 
 .features {
-  overflow: hidden;
+  overflow-x: hidden;
   @include m.breakpoints-up(medium) {
     padding: 0 10.5625rem; //169px
   }

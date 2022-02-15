@@ -135,7 +135,7 @@ a {
 }
 
 .features {
-  overflow: hidden;
+  overflow-x: hidden;
 }
 @media (min-width: 48em) {
   .features {
