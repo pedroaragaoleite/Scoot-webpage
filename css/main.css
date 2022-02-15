@@ -134,6 +134,9 @@ a {
   font-weight: bold;
 }
 
+.features {
+  overflow: hidden;
+}
 @media (min-width: 48em) {
   .features {
     padding: 0 10.5625rem;
